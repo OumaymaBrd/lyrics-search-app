@@ -1,3 +1,4 @@
 // Initial commit: project structure setup
 // Add package.json and basic dependencies
 // Configure webpack and babel
+// Setup ESLint and Prettier
