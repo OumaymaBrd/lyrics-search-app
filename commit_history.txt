@@ -1,1 +1,2 @@
 // Initial commit: project structure setup
+// Add package.json and basic dependencies
