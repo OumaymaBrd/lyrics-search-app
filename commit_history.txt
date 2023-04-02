@@ -2,3 +2,4 @@
 // Add package.json and basic dependencies
 // Configure webpack and babel
 // Setup ESLint and Prettier
+// Create basic folder structure for components
