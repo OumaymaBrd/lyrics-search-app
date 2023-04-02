@@ -5,3 +5,4 @@
 // Create basic folder structure for components
 // Add React Router setup
 // Configure state management with Redux
+// Setup testing environment with Jest
