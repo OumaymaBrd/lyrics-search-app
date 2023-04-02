@@ -4,3 +4,4 @@
 // Setup ESLint and Prettier
 // Create basic folder structure for components
 // Add React Router setup
+// Configure state management with Redux
