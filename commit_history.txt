@@ -7,3 +7,4 @@
 // Configure state management with Redux
 // Setup testing environment with Jest
 // Add basic styling with SCSS
+// Create responsive layout template
