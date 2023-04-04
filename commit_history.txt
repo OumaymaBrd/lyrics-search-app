@@ -13,3 +13,4 @@
 // Implement search input validation
 // Add search history functionality
 // Create search suggestions dropdown
+// Implement auto-complete for artist names
