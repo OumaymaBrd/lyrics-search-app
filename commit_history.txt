@@ -12,3 +12,4 @@
 // Style SearchBar component
 // Implement search input validation
 // Add search history functionality
+// Create search suggestions dropdown
