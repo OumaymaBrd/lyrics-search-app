@@ -10,3 +10,4 @@
 // Create responsive layout template
 // Create SearchBar component structure
 // Style SearchBar component
+// Implement search input validation
