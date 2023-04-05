@@ -16,3 +16,4 @@
 // Implement auto-complete for artist names
 // Add clear search button
 // Create loading indicator for search
+// Implement keyboard navigation for search
