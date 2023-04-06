@@ -19,3 +19,4 @@
 // Implement keyboard navigation for search
 // Add search filters (by artist, title, album)
 // Research and select lyrics API provider
+// Create API service module
