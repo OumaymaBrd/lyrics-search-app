@@ -20,3 +20,4 @@
 // Add search filters (by artist, title, album)
 // Research and select lyrics API provider
 // Create API service module
+// Implement search API endpoint integration
