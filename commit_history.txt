@@ -25,3 +25,4 @@
 // Implement API error handling
 // Add API request caching
 // Create API request throttling
+// Implement API authentication
