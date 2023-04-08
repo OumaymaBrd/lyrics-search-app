@@ -29,3 +29,4 @@
 // Add fallback API provider
 // Create API response normalization
 // Create SearchResults component structure
+// Style search results list
