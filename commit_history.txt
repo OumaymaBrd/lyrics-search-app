@@ -30,3 +30,4 @@
 // Create API response normalization
 // Create SearchResults component structure
 // Style search results list
+// Implement search result item component
