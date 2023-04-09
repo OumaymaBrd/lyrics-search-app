@@ -32,3 +32,4 @@
 // Style search results list
 // Implement search result item component
 // Add pagination for search results
+// Create empty state for no results
