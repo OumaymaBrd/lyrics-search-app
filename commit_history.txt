@@ -36,3 +36,4 @@
 // Implement sorting options for results
 // Add hover effects for result items
 // Create skeleton loading state for results
+// Implement infinite scroll for results
