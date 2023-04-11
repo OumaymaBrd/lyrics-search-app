@@ -39,3 +39,4 @@
 // Implement infinite scroll for results
 // Add result filtering options
 // Create SongDetails component structure
+// Implement API endpoint for song details
