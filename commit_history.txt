@@ -41,3 +41,4 @@
 // Create SongDetails component structure
 // Implement API endpoint for song details
 // Style song details page
+// Add song metadata display (artist, album, year)
