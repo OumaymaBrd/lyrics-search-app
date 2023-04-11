@@ -40,3 +40,4 @@
 // Add result filtering options
 // Create SongDetails component structure
 // Implement API endpoint for song details
+// Style song details page
