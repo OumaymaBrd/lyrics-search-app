@@ -42,3 +42,4 @@
 // Implement API endpoint for song details
 // Style song details page
 // Add song metadata display (artist, album, year)
+// Implement lyrics display with formatting
