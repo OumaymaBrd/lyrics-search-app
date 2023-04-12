@@ -45,3 +45,4 @@
 // Implement lyrics display with formatting
 // Create album artwork display
 // Add related songs section
+// Implement share functionality
