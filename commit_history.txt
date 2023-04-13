@@ -47,3 +47,4 @@
 // Add related songs section
 // Implement share functionality
 // Create print-friendly lyrics view
+// Add song details caching
