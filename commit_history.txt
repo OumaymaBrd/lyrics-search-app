@@ -49,3 +49,4 @@
 // Create print-friendly lyrics view
 // Add song details caching
 // Implement responsive design for mobile
+// Add dark/light theme toggle
