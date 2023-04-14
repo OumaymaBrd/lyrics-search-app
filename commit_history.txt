@@ -52,3 +52,4 @@
 // Add dark/light theme toggle
 // Create custom animations for transitions
 // Implement accessibility improvements
+// Add keyboard shortcuts
