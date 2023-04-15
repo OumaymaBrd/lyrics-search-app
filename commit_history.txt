@@ -56,3 +56,4 @@
 // Create toast notification system
 // Implement font size adjustments
 // Add language selection for UI
+// Create user preferences storage
