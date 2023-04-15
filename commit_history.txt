@@ -54,3 +54,4 @@
 // Implement accessibility improvements
 // Add keyboard shortcuts
 // Create toast notification system
+// Implement font size adjustments
