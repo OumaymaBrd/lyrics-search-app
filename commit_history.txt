@@ -66,3 +66,4 @@
 // Research audio API providers
 // Create AudioPlayer component structure
 // Implement audio API integration
+// Style audio player controls
