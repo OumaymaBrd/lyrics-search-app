@@ -69,3 +69,4 @@
 // Style audio player controls
 // Add play/pause functionality
 // Implement volume control
+// Create progress bar for audio
