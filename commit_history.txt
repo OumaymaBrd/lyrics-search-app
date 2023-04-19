@@ -70,3 +70,4 @@
 // Add play/pause functionality
 // Implement volume control
 // Create progress bar for audio
+// Add playlist functionality
