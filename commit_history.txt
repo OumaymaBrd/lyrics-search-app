@@ -77,3 +77,4 @@
 // Implement integration tests
 // Create end-to-end tests
 // Optimize bundle size
+// Implement code splitting
