@@ -74,3 +74,4 @@
 // Implement audio caching
 // Create mini player for navigation
 // Add unit tests for components
+// Implement integration tests
