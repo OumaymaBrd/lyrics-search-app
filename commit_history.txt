@@ -75,3 +75,4 @@
 // Create mini player for navigation
 // Add unit tests for components
 // Implement integration tests
+// Create end-to-end tests
