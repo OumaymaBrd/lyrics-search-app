@@ -1,56 +1,65 @@
 // src/services/api.js
 import axios from 'axios';
 
-// Fonction mock pour la démonstration (à remplacer par votre API réelle)
-const mockSearchAPI = (title, artist) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Données de démonstration
-      const mockData = [
-        { id: 1, title: 'Shape of You', artist: 'Ed Sheeran', album: '÷ (Divide)' },
-        { id: 2, title: 'Blinding Lights', artist: 'The Weeknd', album: 'After Hours' },
-        { id: 3, title: 'Dance Monkey', artist: 'Tones and I', album: 'The Kids Are Coming' },
-        { id: 4, title: 'Someone You Loved', artist: 'Lewis Capaldi', album: 'Divinely Uninspired to a Hellish Extent' }
-      ];
-      
-      // Filtrer les résultats en fonction de la recherche
-      const results = mockData.filter(song => {
-        const matchTitle = title && song.title.toLowerCase().includes(title.toLowerCase());
-        const matchArtist = artist && song.artist.toLowerCase().includes(artist.toLowerCase());
-        return title && artist ? (matchTitle && matchArtist) : (matchTitle || matchArtist);
-      });
-      
-      resolve(results);
-    }, 1000); // Simuler un délai réseau
-  });
-};
+// Proxy CORS Anywhere
+const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/';
 
-const mockGetLyricsAPI = (songId) => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      // Exemple de paroles (à remplacer par votre API réelle)
-      const mockLyrics = {
-        1: { lyrics: "[Exemple de paroles pour Shape of You]\n\nLes paroles complètes seraient affichées ici." },
-        2: { lyrics: "[Exemple de paroles pour Blinding Lights]\n\nLes paroles complètes seraient affichées ici." },
-        3: { lyrics: "[Exemple de paroles pour Dance Monkey]\n\nLes paroles complètes seraient affichées ici." },
-        4: { lyrics: "[Exemple de paroles pour Someone You Loved]\n\nLes paroles complètes seraient affichées ici." }
-      };
-      
-      resolve(mockLyrics[songId] || { lyrics: "Paroles non disponibles" });
-    }, 800); // Simuler un délai réseau
-  });
-};
+// Base URL pour l'API Lyrics.ovh
+const LYRICS_API_URL = 'https://api.lyrics.ovh/v1';
+
+// Base URL pour l'API Deezer (pour la recherche de chansons)
+const DEEZER_API_URL = 'https://api.deezer.com';
 
 export default {
-  searchSongs(title, artist) {
-    // Pour une application réelle, remplacez par :
-    // return axios.get(`${API_BASE_URL}/search`, { params: { title, artist } });
-    return mockSearchAPI(title, artist);
+  // Recherche de chansons via Deezer
+  async searchSongs(title, artist) {
+    try {
+      let query = '';
+      
+      if (title && artist) {
+        query = `${artist} ${title}`;
+      } else if (title) {
+        query = title;
+      } else if (artist) {
+        query = artist;
+      }
+      
+      const response = await axios.get(`${CORS_PROXY}${DEEZER_API_URL}/search`, {
+        params: {
+          q: query,
+          limit: 15
+        }
+      });
+      
+      // Transformer les résultats au format attendu par notre application
+      return response.data.data.map(item => ({
+        id: item.id,
+        title: item.title,
+        artist: item.artist.name,
+        album: item.album.title,
+        albumCover: item.album.cover_medium,
+        duration: item.duration,
+        preview: item.preview // URL pour l'aperçu audio
+      }));
+    } catch (error) {
+      console.error('Erreur lors de la recherche:', error);
+      throw error;
+    }
   },
   
-  getLyrics(songId) {
-    // Pour une application réelle, remplacez par :
-    // return axios.get(`${API_BASE_URL}/lyrics/${songId}`);
-    return mockGetLyricsAPI(songId);
+  // Récupération des paroles via Lyrics.ovh
+  async getLyrics(artist, title) {
+    try {
+      // Nettoyer le titre et l'artiste pour éviter les problèmes d'URL
+      const cleanArtist = encodeURIComponent(artist.trim());
+      const cleanTitle = encodeURIComponent(title.trim());
+      
+      const response = await axios.get(`${LYRICS_API_URL}/${cleanArtist}/${cleanTitle}`);
+      return { lyrics: response.data.lyrics };
+    } catch (error) {
+      console.error('Erreur lors de la récupération des paroles:', error);
+      // Si l'API ne trouve pas les paroles, retourner un message
+      return { lyrics: "Paroles non disponibles pour cette chanson." };
+    }
   }
 };
