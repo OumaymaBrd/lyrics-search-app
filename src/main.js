@@ -1,4 +1,3 @@
-// src/main.js
 import { createApp } from 'vue'
 import App from './App.vue'
 
@@ -35,7 +34,7 @@ const vuetify = createVuetify({
       },
       dark: {
         colors: {
-          primary: '#FF5722', // deep-orange
+          primary: '#FF5722', 
           secondary: '#78909C',
           accent: '#FFA726',
           error: '#EF5350',
